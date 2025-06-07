@@ -1,4 +1,5 @@
 /* Register.css */
+
 .container {
   max-width: 420px;
   margin: 40px auto;
@@ -9,6 +10,11 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   transition: all 0.3s ease;
+  user-select: none;
+}
+
+.container:focus-within {
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
 }
 
 .heading {
@@ -16,6 +22,7 @@
   font-weight: 800;
   margin-bottom: 28px;
   color: #111827;
+  user-select: text;
 }
 
 .formInput {
@@ -26,8 +33,9 @@
   border: 2px solid #d1d5db;
   font-size: 16px;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   font-family: inherit;
+  user-select: text;
 }
 
 .formInput:focus {
@@ -37,22 +45,28 @@
   background-color: #f9fafb;
 }
 
+/* Validation States */
 .inputValid {
-  border-color: green;
+  border-color: #22c55e; /* Tailwind green-500 */
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
 }
 
 .inputInvalid {
-  border-color: red;
+  border-color: #ef4444; /* Tailwind red-500 */
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3);
 }
 
+/* Error Message Styling */
 .errorMessage {
-  color: red;
+  color: #ef4444; /* Tailwind red-500 */
   font-size: 14px;
   margin-top: 4px;
   margin-bottom: 10px;
   text-align: left;
+  user-select: text;
 }
 
+/* Submit Button */
 .submitButton {
   width: 100%;
   padding: 14px;
@@ -66,19 +80,23 @@
   transition: background 0.4s ease, transform 0.2s ease;
   font-family: inherit;
   letter-spacing: 0.5px;
+  user-select: none;
 }
 
-.submitButton:hover {
+.submitButton:hover:not(:disabled),
+.submitButton:focus-visible:not(:disabled) {
   background: linear-gradient(to right, #2563eb, #1e40af);
   transform: scale(1.02);
+  outline: none;
 }
 
 .submitButton:disabled {
   background-color: #a0a0a0;
   cursor: not-allowed;
+  transform: none;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 500px) {
   .container {
     margin: 20px 12px;

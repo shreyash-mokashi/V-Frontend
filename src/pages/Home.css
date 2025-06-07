@@ -1,3 +1,4 @@
+/* HomePage.css */
 .home-container {
   max-width: 1100px;
   margin: 2rem auto;
@@ -5,12 +6,19 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to top left, #f9fafb, #ffffff);
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    0 2px 10px rgba(37, 99, 235, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  user-select: none;
 }
 
 .home-container:hover {
   transform: translateY(-3px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 6px 20px rgba(37, 99, 235, 0.25);
 }
 
 .home-title {
@@ -19,11 +27,13 @@
   color: #1a202c;
   font-weight: 700;
   text-align: center;
+  user-select: text;
 }
 
 .user-name {
   color: #4ade80;
-  font-weight: bold;
+  font-weight: 700;
+  user-select: text;
 }
 
 .home-subtitle {
@@ -31,6 +41,8 @@
   margin-bottom: 24px;
   text-align: center;
   font-size: 1.125rem;
+  font-weight: 500;
+  user-select: text;
 }
 
 .home-nav {
@@ -48,12 +60,15 @@
   color: #374151;
   font-weight: 500;
   padding-bottom: 6px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease;
   font-size: 1.05rem;
+  user-select: none;
 }
 
-.home-nav a:hover {
+.home-nav a:hover,
+.home-nav a:focus-visible {
   color: #2563eb;
+  outline: none;
 }
 
 .active-link {
@@ -68,7 +83,8 @@
   border-radius: 10px;
   background: #f8fafc;
   min-height: 400px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  user-select: text;
 }
 
 .logout-button {
@@ -78,15 +94,20 @@
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   margin-top: 1rem;
+  user-select: none;
+  box-shadow: 0 3px 8px rgba(220, 38, 38, 0.6);
 }
 
-.logout-button:hover {
+.logout-button:hover,
+.logout-button:focus-visible {
   background: linear-gradient(to right, #b91c1c, #991b1b);
   transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(153, 27, 27, 0.8);
+  outline: none;
 }
 
 /* Responsive Layout */
