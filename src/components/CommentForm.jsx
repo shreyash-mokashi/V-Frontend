@@ -23,7 +23,7 @@ const CommentForm = ({ postId, onNewComment }) => {
     try {
       const body = JSON.stringify({ text });
       const res = await axios.post(
-        `${API_BASE_URL}/api/posts/comment/${postId}`,
+        `${API_BASE_URL}/posts/comment/${postId}`,
         body,
         config
       );
