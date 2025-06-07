@@ -32,7 +32,7 @@ export default function MyProfile() {
       {profile.imageUrl && (
         <div className="profile-image-wrapper">
           <img
-            src={`${API_BASE_URL.replace("/api", "")}${profile.imageUrl}`}
+            src={`${API_BASE_URL.replace("", "")}${profile.imageUrl}`}//====
             alt="Profile"
             className="profile-image"
           />

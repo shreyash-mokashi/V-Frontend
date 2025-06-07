@@ -38,7 +38,7 @@ const Posts = () => {
     if (!text) return alert("Please enter text");
     try {
       const body = JSON.stringify({ text });
-      const res = await axios.post(`${API_BASE_URL}/api/posts`, body, config);
+      const res = await axios.post(`${API_BASE_URL}/posts`, body, config);
       setPosts([res.data, ...posts]);
       setText("");
     } catch (err) {
@@ -49,7 +49,7 @@ const Posts = () => {
 
   const likePost = async (postId) => {
     try {
-      const res = await axios.put(`${API_BASE_URL}/api/posts/like/${postId}`, {}, config);
+      const res = await axios.put(`${API_BASE_URL}/posts/like/${postId}`, {}, config);
       setPosts(posts.map(post => post._id === postId ? { ...post, likes: res.data } : post));
     } catch (err) {
       console.error(err);
@@ -58,7 +58,7 @@ const Posts = () => {
 
   const unlikePost = async (postId) => {
     try {
-      const res = await axios.put(`${API_BASE_URL}/api/posts/unlike/${postId}`, {}, config);
+      const res = await axios.put(`${API_BASE_URL}/posts/unlike/${postId}`, {}, config);
       setPosts(posts.map(post => post._id === postId ? { ...post, likes: res.data } : post));
     } catch (err) {
       console.error(err);
@@ -68,7 +68,7 @@ const Posts = () => {
   const deletePost = async (postId) => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     try {
-      await axios.delete(`${API_BASE_URL}/api/posts/${postId}`, config);
+      await axios.delete(`${API_BASE_URL}/posts/${postId}`, config);
       setPosts(posts.filter(post => post._id !== postId));
     } catch (err) {
       console.error(err);
