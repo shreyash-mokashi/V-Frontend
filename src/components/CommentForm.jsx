@@ -18,7 +18,7 @@ const CommentForm = ({ postId, onNewComment }) => {
 
   const submitComment = async (e) => {
     e.preventDefault();
-    if (!text) return alert("Please enter a comment");
+    if (!text.trim()) return alert("Please enter a comment");
 
     try {
       const body = JSON.stringify({ text });
@@ -27,7 +27,8 @@ const CommentForm = ({ postId, onNewComment }) => {
         body,
         config
       );
-      onNewComment(res.data);
+      // res.data is the new comment object
+      onNewComment(res.data); // Add the new comment to parent state immediately
       setText("");
     } catch (err) {
       console.error(err);
