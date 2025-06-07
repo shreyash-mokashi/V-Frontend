@@ -13,7 +13,7 @@ const AdminPanel = () => {
   // Fetch users
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/api/admin/users`, {
+      const res = await axios.get(`${API_BASE_URL}/admin/users`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -26,7 +26,7 @@ const AdminPanel = () => {
   // Fetch posts
   const fetchPosts = useCallback(async () => {
     try {
-      const res = await axios.get(`${API_BASE_URL}/api/admin/posts`, {
+      const res = await axios.get(`${API_BASE_URL}/admin/posts`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(res.data);
@@ -40,7 +40,7 @@ const AdminPanel = () => {
   const deleteUser = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      await axios.delete(`${API_BASE_URL}/api/admin/user/${id}`, {
+      await axios.delete(`${API_BASE_URL}/admin/user/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(users.filter((user) => user._id !== id));
@@ -55,7 +55,7 @@ const AdminPanel = () => {
   const deletePost = async (id) => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
     try {
-      await axios.delete(`${API_BASE_URL}/api/admin/post/${id}`, {
+      await axios.delete(`${API_BASE_URL}/admin/post/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPosts(posts.filter((post) => post._id !== id));

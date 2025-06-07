@@ -18,7 +18,7 @@ export default function SearchProfiles() {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`${API_BASE_URL}/api/profile/search`, {
+        const res = await axios.get(`${API_BASE_URL}/profile/search`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -71,7 +71,7 @@ export default function SearchProfiles() {
       if (name) params.append("name", name);
       if (skill) params.append("skill", skill);
 
-      const res = await axios.get(`${API_BASE_URL}/api/profile/search?${params.toString()}`, {
+      const res = await axios.get(`${API_BASE_URL}/profile/search?${params.toString()}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
