@@ -22,7 +22,7 @@ const Posts = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/posts`, config);
+        const res = await axios.get(`${API_BASE_URL}/posts`, config);
         setPosts(res.data);
         setLoading(false);
       } catch (err) {
