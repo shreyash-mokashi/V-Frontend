@@ -12,6 +12,8 @@ export default function MyProfile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
+        console.log("Full Image URL:", `${API_BASE_URL}${profile.imageUrl}`);
+
         const res = await api.get("/profile/me");
         setProfile(res.data);
       } catch (err) {
