@@ -73,16 +73,21 @@ export default function Register() {
     }
 
     try {
-      await API.post('/auth/register', {
-        name: form.name,
-        email: form.email,
-        password: form.password,
-      });
-      alert('Registration successful. Please login.');
-      navigate('/login');
-    } catch (err) {
-      alert('Registration failed');
-    }
+  await API.post('/auth/register', {
+    name: form.name,
+    email: form.email,
+    password: form.password,
+  });
+  alert('Registration successful. Please login.');
+  navigate('/login');
+} catch (err) {
+  if (err.response && err.response.status === 400 && err.response.data.msg) {
+    alert(err.response.data.msg); // This will show "User already exists" if backend sends that msg
+  } else {
+    alert('Registration failed');
+  }
+}
+
   };
 
   return (
