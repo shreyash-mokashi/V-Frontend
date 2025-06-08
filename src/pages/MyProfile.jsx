@@ -25,7 +25,7 @@ export default function MyProfile() {
   }, []);
 
   if (!profile) return <p>No profile found. Please create your profile.</p>;
-
+  console.log("Full Image URL:", `${API_BASE_URL}${profile.imageUrl}`);
   return (
     <div className="profile-container">
       <h2 className="profile-title">My Profile</h2>
