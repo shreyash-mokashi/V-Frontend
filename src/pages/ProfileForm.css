@@ -1,10 +1,9 @@
 /* ProfileForm.css */
 
 .container {
-  max-width: 900px; /* Increased for large screens */
-  width: 90%;
+  max-width: 500px;
   margin: 40px auto;
-  padding: 40px 50px; /* More generous padding */
+  padding: 28px 32px;
   background-color: #ffffff;
   border-radius: 16px;
   box-shadow:
@@ -25,9 +24,9 @@
 
 .heading {
   text-align: center;
-  font-size: 36px; /* Increased for large screens */
+  font-size: 32px;
   font-weight: 900;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   color: #111827;
   letter-spacing: 0.03em;
   user-select: none;
@@ -35,15 +34,15 @@
 
 .message {
   text-align: center;
-  margin-bottom: 24px;
-  color: #2563eb;
+  margin-bottom: 20px;
+  color: #2563eb; /* Bright Blue */
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 700;
   color: #374151;
   letter-spacing: 0.02em;
@@ -53,13 +52,13 @@
 .input,
 .textarea {
   width: 100%;
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-radius: 10px;
-  border: 2px solid #cbd5e1;
-  font-size: 18px; /* Slightly larger */
+  border: 2px solid #cbd5e1; /* lighter gray-blue */
+  font-size: 17px;
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   font-family: inherit;
   resize: none;
   background-color: #fefefe;
@@ -75,21 +74,21 @@
 }
 
 .textarea {
-  min-height: 120px;
-  line-height: 1.6;
+  min-height: 110px;
+  line-height: 1.5;
 }
 
 .fileInput {
   display: block;
   width: 100%;
-  padding: 16px;
-  font-size: 17px;
+  padding: 14px;
+  font-size: 16px;
   background-color: #f9fafc;
   border: 2.5px dashed #93c5fd;
   border-radius: 12px;
   cursor: pointer;
   transition: border-color 0.3s ease, background-color 0.3s ease;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   font-weight: 600;
   color: #2563eb;
   text-align: center;
@@ -107,12 +106,12 @@
 .imgPreviewContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .imgPreview {
-  width: 160px; /* Increased for large screens */
-  height: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #3b82f6;
@@ -132,18 +131,18 @@
   text-align: center;
   color: #2563eb;
   font-weight: 700;
-  margin-bottom: 24px;
-  font-size: 1.2rem;
+  margin-bottom: 22px;
+  font-size: 1.1rem;
 }
 
 .button {
   width: 100%;
-  padding: 18px;
+  padding: 16px;
   background: linear-gradient(90deg, #3b82f6, #2563eb);
   border: none;
   border-radius: 14px;
   color: white;
-  font-size: 19px; /* Slightly larger */
+  font-size: 18px;
   font-weight: 800;
   cursor: pointer;
   transition: background 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
@@ -168,7 +167,7 @@
 }
 
 .inputInvalid {
-  border: 2.5px solid #dc2626;
+  border: 2.5px solid #dc2626; /* stronger red */
   background-color: #fef2f2;
   transition: border-color 0.3s ease;
 }
@@ -183,27 +182,6 @@
 }
 
 /* Responsive styles */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1000px;
-    padding: 50px 60px;
-  }
-
-  .heading {
-    font-size: 40px;
-  }
-
-  .imgPreview {
-    width: 180px;
-    height: 180px;
-  }
-
-  .button {
-    padding: 20px;
-    font-size: 20px;
-  }
-}
-
 @media (max-width: 540px) {
   .container {
     margin: 24px 16px;
